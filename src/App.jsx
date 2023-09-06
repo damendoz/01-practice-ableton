@@ -6,6 +6,10 @@ import 'boxicons'
 //css
 import './App.css'
 
+//components
+import { DesingMobile } from './Components/desingMobile'
+import { MoreInformation } from './Components/moreInformation'
+
 function App() {
 
   const [isMobile, setIsMobile] = useState(false)
@@ -23,13 +27,21 @@ function App() {
 
   const divFixed = isMobile ? 'app-nav__primary-mobile fixed' : 'app-nav__primary-mobile'
 
+  const [more, setMore] = useState(false)
+
+  const handleClickMore = () => {
+    setMore(!more)
+  }
+
+  const classNameMore = more ? 'app-nav__button-more expanded' : 'app-nav__button-more'
+
   return (
     <div className="app">
       <header className={className}>
         <nav className="app-nav">
           <a href="" className='app-nav__logo-pc'>
             <button className="app-nav__button-logo-pc">
-              <img src="../public/bx-pyramid.svg" alt="logo" />
+              <img src="../bx-pyramid.svg" alt="logo" />
             </button>
           </a>
           <div className="app-nav__primary">
@@ -42,7 +54,9 @@ function App() {
               <li><a href="">Packs</a></li>
               <li><a href="">Help</a></li>
               <li className="app-nav__ul-more">
-                <button className='app-nav__button-more'>
+                <button className={classNameMore}
+                  onClick={handleClickMore}
+                >
                   <span>More</span>
                   <span>
                     <box-icon name='plus'
@@ -57,38 +71,20 @@ function App() {
                 </button>
               </li>
               <li className='app-nav__left'>
-                <a href="" className='app-nav__left-blue'>Try Live for free</a>
+                <a href="" className='app-nav__left-blue'><strong>Try Live for free</strong></a>
               </li>
-              <li><a href="" className='app-nav__left-black'>Log in or register</a></li>
+              <li><a href="" className='app-nav__left-black'><strong>Log in or register</strong></a></li>
             </ul>
           </div>
-          {/* mobile */}
-          <div className="app-nav__container-logo-mobile">
-            <a href="" className='app-nav__logo-mobile'>
-              <span className='app-nav__logo-text-hidden'>Ableton HomePage</span>
-              <box-icon name='pyramid' size='md' color={classNameExpand}></box-icon>
-            </a>
-            <button className="app-nav__button-logo-mobile" onClick={handleOpenMenu}>
-              <span className='app-nav__button-text-mobile' style={{ color: classNameExpand }}>Menu</span>
-              <box-icon type='solid' name='down-arrow' size='xs' color={classNameExpand}></box-icon>
-            </button>
-          </div>
-          {
-            isMobile === true &&
-            <div className={divFixed}>
-              <ul className='app-nav__ul-primary-mobile'>
-                <li><a href="">Live</a></li>
-                <li><a href="">Push</a></li>
-                <li><a href="">Note</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Packs</a></li>
-                <li><a href="">Help</a></li>
-                <li><a href="">Try Live for free</a></li>
-                <li><a href="">Log in or register</a></li>
-              </ul>
-            </div>
-          }
+          <DesingMobile
+            isMobile={isMobile}
+            handleOpenMenu={handleOpenMenu}
+            classNameExpand={classNameExpand}
+            divFixed={divFixed}
+          /> 
+          <MoreInformation
+            more={more}
+          />
           <div className='main-nav__stretcher-mobile'></div>
         </nav>
         <div className="main-nav__separator"></div>
@@ -101,11 +97,20 @@ function App() {
         </nav>
       </header>
       <main className="app-main">
-        <div className="app-main__container">
+        <section className="app-main__container">
           <div className="app-main__container-image">
-            <img className="img-responsive" src='img.jpg'></img>
+            <img className="app-main__image" src='front-img.jpg'></img>
           </div>
-        </div>
+
+          <div className="app-main__container-text">
+            <h1 className="app-main__title">Make music with Ableton Live</h1>
+            <p className="app-main__paragraph">Live is fast, fluid software for music creation and performance. Use its timeline-based workflow or improvise without constraints in Live’s Session View. Advanced warping lets you change the tempo and timing of any audio in real time without stopping the music. Record virtual instruments, drum machines, guitars or audio from the real world. Capture MIDI notes after you’ve played them, turning your most spontaneous ideas (and happy accidents) into music.</p>
+            <div className="app-main__container-button">
+              <button className="app-main__button">Try Live for free</button>
+              <button className="app-main__button">Buy Live now</button>
+            </div>
+          </div>
+        </section>
       </main>
       <footer className="app-footer">
       </footer>

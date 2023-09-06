@@ -167,6 +167,10 @@ span.app-nav__logo-text-hidden {
     padding-bottom: 0.5rem;
     padding-left: 0px;
   }
+
+header.main-nav__more-information {
+  display: none;
+}
 }
 
 div.main-nav__separator {
@@ -198,17 +202,68 @@ a.app-nadvar__secondary-red {
   color: #ff764d;
 }
 
-div.app-main__container-image {
-  width: 100vw;
-  object-fit: contain;
-  display: flex;
-  margin: auto;
+section.app-main__container {
+  display: block;
+  overflow-x: hidden;
 }
 
-img.img-responsive {
+div.app-main__container-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+img.app-main__image {
   width: 900px;
   height: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+}
+
+div.main-nav__more-information-container {
+  padding: 3rem;
+  padding-bottom: 0px;
+}
+
+.main-ul__li-initial {
+  padding: 0;
+}
+
+ul.main-nav__ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  font-weight: normal;
+}
+
+.main-ul__li-red {
+  color: #ff764d;
+}
+
+div.main-nav__more-information-subcontent {
+  display: flex;
+}
+
+ul.main-nav__subcontent-ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+  margin: 0;
+}
+
+h3.main-nav__more-information-title {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+a.main-nav__a {
+  padding: 0px;
 }
