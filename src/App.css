@@ -168,9 +168,9 @@ span.app-nav__logo-text-hidden {
     padding-left: 0px;
   }
 
-header.main-nav__more-information {
-  display: none;
-}
+  header.main-nav__more-information {
+    display: none;
+  }
 }
 
 div.main-nav__separator {
@@ -217,6 +217,12 @@ div.app-main__container-image {
 img.app-main__image {
   width: 900px;
   height: auto;
+}
+
+@media screen and (max-width: 390px) {
+  img.app-main__image {
+    width: 100vw;
+  }
 }
 
 div.main-nav__more-information-container {
@@ -266,4 +272,60 @@ h4 {
 
 a.main-nav__a {
   padding: 0px;
+}
+
+div.app-main__container-text {
+  width: 100%;
+  height: auto;
+}
+
+div.app-main__title {
+  padding: 2rem 3rem 1rem 3rem;
+}
+
+@media screen and (max-width: 425px) {
+  div.app-main__title {
+    padding: 1rem 0rem;
+  }
+}
+
+div.app-main__text {
+  padding: 0rem 3rem 2rem 3rem;
+}
+
+@media screen and (max-width: 425px) {
+  div.app-main__text {
+    padding: 0 0 2rem 0;
+  }
+}
+
+div.app-main__container-left {
+  display: inline-flex;
+  position: relative;
+  z-index: 1;
+  left: 6rem;
+}
+
+img.app-main__image-primary {
+  width: 100%;
+  height: 90vh;
+}
+
+div.app-main__container-right {
+  display: inline-flex;
+}
+
+div.app-main__rigth-center {
+  background-color: #fbffa7;
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+img.app-main__image-secondary {
+  width: 35vw;
+  height: auto;
 }

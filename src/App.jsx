@@ -33,6 +33,8 @@ function App() {
     setMore(!more)
   }
 
+  const iconMore = more ? 'minus' : 'plus'
+
   const classNameMore = more ? 'app-nav__button-more expanded' : 'app-nav__button-more'
 
   return (
@@ -59,14 +61,13 @@ function App() {
                 >
                   <span>More</span>
                   <span>
-                    <box-icon name='plus'
+                    <box-icon name={iconMore}
                       color="#ff764d"
                       style={{
                         position: "relative",
                         top: "5px"
                       }}
-                    >
-                    </box-icon>
+                    />
                   </span>
                 </button>
               </li>
@@ -81,7 +82,7 @@ function App() {
             handleOpenMenu={handleOpenMenu}
             classNameExpand={classNameExpand}
             divFixed={divFixed}
-          /> 
+          />
           <MoreInformation
             more={more}
           />
@@ -101,13 +102,28 @@ function App() {
           <div className="app-main__container-image">
             <img className="app-main__image" src='front-img.jpg'></img>
           </div>
-
           <div className="app-main__container-text">
-            <h1 className="app-main__title">Make music with Ableton Live</h1>
-            <p className="app-main__paragraph">Live is fast, fluid software for music creation and performance. Use its timeline-based workflow or improvise without constraints in Live’s Session View. Advanced warping lets you change the tempo and timing of any audio in real time without stopping the music. Record virtual instruments, drum machines, guitars or audio from the real world. Capture MIDI notes after you’ve played them, turning your most spontaneous ideas (and happy accidents) into music.</p>
-            <div className="app-main__container-button">
-              <button className="app-main__button">Try Live for free</button>
-              <button className="app-main__button">Buy Live now</button>
+            <div className="app-main__title">
+              <h4>
+                We make Live, Push and Link — unique software
+                and hardware for music creation and performance. With these products, our
+                community of users creates amazing things.
+              </h4>
+            </div>
+            <div className='app-main__text'>
+              <p>Ableton was founded in 1999 and released the first version of Live in 2001.
+                Our products are used by a community of dedicated musicians,
+                sound designers, and artists from across the world.</p>
+            </div>
+          </div>
+          <div className="app-main__container-image">
+            <div className='app-main__container-left'>
+              <img className="app-main__image-primary" src='img-left.jpg'></img>
+            </div>
+            <div className='app-main__container-right'>
+              <div className='app-main__rigth-center'>
+                <img className="app-main__image-secondary" src='img-right.jpg'></img>
+              </div>
             </div>
           </div>
         </section>
